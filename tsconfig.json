@@ -8,6 +8,18 @@
     },
     {
       "path": "./apps/upload_workspace"
+    },
+    {
+      "path": "./apps/api_gateway-e2e"
+    },
+    {
+      "path": "./apps/api_gateway"
+    },
+    {
+      "path": "./apps/import_workspace-e2e"
+    },
+    {
+      "path": "./apps/import_workspace"
     }
   ]
 }

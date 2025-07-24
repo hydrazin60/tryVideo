@@ -1,0 +1,26 @@
+{
+  "name": "@watchme/import_workspace-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "implicitDependencies": [
+      "@watchme/import_workspace"
+    ],
+    "targets": {
+      "e2e": {
+        "executor": "@nx/jest:jest",
+        "outputs": [
+          "{projectRoot}/test-output/jest/coverage"
+        ],
+        "options": {
+          "jestConfig": "apps/import_workspace-e2e/jest.config.ts",
+          "passWithNoTests": true
+        },
+        "dependsOn": [
+          "@watchme/import_workspace:build",
+          "@watchme/import_workspace:serve"
+        ]
+      }
+    }
+  }
+}
