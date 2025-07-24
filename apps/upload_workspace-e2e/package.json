@@ -1,0 +1,26 @@
+{
+  "name": "@watchme/upload_workspace-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "implicitDependencies": [
+      "@watchme/upload_workspace"
+    ],
+    "targets": {
+      "e2e": {
+        "executor": "@nx/jest:jest",
+        "outputs": [
+          "{projectRoot}/test-output/jest/coverage"
+        ],
+        "options": {
+          "jestConfig": "apps/upload_workspace-e2e/jest.config.ts",
+          "passWithNoTests": true
+        },
+        "dependsOn": [
+          "@watchme/upload_workspace:build",
+          "@watchme/upload_workspace:serve"
+        ]
+      }
+    }
+  }
+}
