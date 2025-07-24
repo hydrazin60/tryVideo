@@ -6,9 +6,14 @@ import rateLimit from "express-rate-limit";
 import path from "path";
 import proxy from "express-http-proxy";
 import dotenv from "dotenv";
+import { dbConnect } from "../../../db/dbConnection";
 const app = express();
 dotenv.config();
 
+dbConnect().catch((err) => {
+  console.error("Failed to connect to MongoDB", err);
+  process.exit(1);
+});
 // Middlewares
 app.use(express.json({ limit: "100mb" }));
 app.use(express.urlencoded({ limit: "100mb", extended: true }));
